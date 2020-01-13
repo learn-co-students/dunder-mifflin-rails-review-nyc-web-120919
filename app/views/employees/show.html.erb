@@ -1,0 +1,20 @@
+<h1><%= @employee.to_s %></h1><br>
+
+<div><a href="<%= @employee.img_url %>"><img src="<%= @employee.img_url %>"></a></div><br>
+
+Alias: <%= @employee.alias.capitalize %><br>
+
+Title: <%= @employee.title.capitalize %><br>
+
+Office: <%= @employee.office.capitalize %><br>
+
+<div>
+<% @dogs.each do |dog| %>
+    <div>
+        <% if dog.id == @employee.dog_id %>
+        Dog:
+        <%= dog.name %> 
+        <% end %>
+    </div>
+<% end %> 
+</div>
