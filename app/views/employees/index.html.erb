@@ -1,0 +1,9 @@
+<h3> Find me inside of employeees / index.html.erb m8 </h3>
+<ul>
+
+<h1> <%= button_to('Add a new employee', '/employees/new', method: "get") %> </h1>
+<%@employees.each do |employee|%>
+<li> <%= link_to (employee.first_name + employee.last_name).titlecase, employee_path(employee)%> </li>
+<%end%>
+
+</ul>

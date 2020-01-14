@@ -1,0 +1,14 @@
+<p> Please fill in the data as such </p>
+
+<%= form_for @employee do |f| %>
+
+First name:  <%= f.text_field :first_name %> <br>
+Last name:  <%= f.text_field :last_name %> <br>
+Alias:  <%= f.text_field :alias %> <br>
+Title:  <%= f.text_field :title %> <br>
+office:  <%= f.text_field :office %> <br>
+Owner of:  <%= f.collection_select :dog_id, @dog, :id, :name%> <br>
+link to your image:   <%= f.text_field :img_url %> <br>
+  <%= f.submit "save employee", class: "btn btn-default"%>
+<% end %>
+<%params.inspect%>
