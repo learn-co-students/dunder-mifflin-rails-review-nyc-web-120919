@@ -1,0 +1,10 @@
+<h1> Dogs in order of Pupularity</h1>
+<ul>
+<% Dog.sorted_by_num_of_employees.each do |dog| %>
+    <li><strong>Name:</strong> <%= link_to dog.name, dog_path(dog) %> 
+    <strong>Employees: </strong> <%=dog.employees.count%> </li>
+    <% end %>
+</ul>    
+
+<br>
+<%= link_to "Dog Index", dogs_path %>
