@@ -1,0 +1,10 @@
+<div>
+    <%= image_tag(@employee.img_url, :alt => "rss feed") %> <br>
+   <h3>First name: <%=@employee.first_name%> </h3> 
+   <p>Last name: <%=@employee.last_name%> </p> 
+   <p>Nickname:<%=@employee.alias %> </p> 
+   <p>Title: <%=@employee.title %> </p> 
+   <p>Office: <%=@employee.office %> </p> 
+   <p> Proud owner of <%=@employee.dog.name%> </p>
+<h1> <%= button_to('Edit an employee', "/employees/#{@employee.id}/edit", method: "get") %> </h1>
+<h1> <%= button_to('Remove the employee from the database', "/employees/#{@employee.id}", method: "delete")%> </h1>
