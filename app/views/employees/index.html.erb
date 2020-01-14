@@ -1,0 +1,8 @@
+<h1>All employees</h1>
+<% @employees.each do |employee| %>
+    <p>
+        <a href=<%= employee_path(employee.id) %>>
+            <%= employee.name %>
+        </a>
+    </p>
+<% end %>

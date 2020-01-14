@@ -1,0 +1,13 @@
+<h1>All Dogs</h1>
+
+<% @dogs.each do |dog| %>
+    <P>
+        <a href=<%= dog_path(dog.id) %>>
+            <%= dog.name %>
+        </a>
+    </p>
+<% end %>
+<%= form_tag(dogs_path, method: "get") do %>
+    <%= hidden_field_tag 'sort', true %>
+    <%= button_to "Sort"%>
+<% end %>
