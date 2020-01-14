@@ -1,0 +1,12 @@
+<h1>Dog Index page</h1>
+<ul>
+<% @dogs.each do |dog| %>
+    <li><%= link_to dog.name, dog_path(dog) %>
+<%end%>
+</ul>    
+
+<br>
+<br>
+<%= link_to "Popular Dogs", popular_dog_path %>
+<br>
+<%= link_to "Employee Index", employees_path %>

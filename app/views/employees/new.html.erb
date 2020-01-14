@@ -1,0 +1,28 @@
+<h1>Enter the information for the new employee </h1>
+
+<% if @employee.errors.messages.any? %>
+    <% @employee.errors.messages.each do |type, message| %>
+        <p style="color:Tomato;"><%= "That #{type} is already taken." %></p>
+        <% end %>
+<%end%>
+
+<%= form_for @employee do |f| %>
+    <p><%= f.label :first_name %>
+    <%= f.text_field :first_name %></p>
+    <p><%= f.label :last_name %>
+    <%= f.text_field :last_name %></p>
+    <p><%= f.label :alias %>
+    <%= f.text_field :alias %></p>
+    <p><%= f.label :title %>
+    <%= f.text_field :title %></p>
+    <p><%= f.label :office %>
+    <%= f.text_field :office %></p>
+    <p><%= f.label :dog %>
+    <%= f.collection_select :dog_id, @dogs, :id, :name %></p>
+    <p><%= f.label "Image URL" %>
+    <!-- set default image to office promotional poster -->
+    <%= f.text_field :img_url, :value => "https://img.nbc.com/sites/nbcunbc/files/images/2016/1/19/MDot-TheOffice-640x360-MP.jpg" %></p>
+    <%= f.submit :add_employee %>
+<% end %>
+<br>
+<%= link_to "Cancel Action", employees_path%>
