@@ -1,0 +1,17 @@
+<h1><%= @dog.name %></h1><br>
+
+Breed: <%= @dog.breed.capitalize %><br>
+
+Age: <%= @dog.age.capitalize %><br><br>
+
+<h3>Associated Employees:</h3>
+
+<div>
+<% @employees.each do |employee| %>
+    <div>
+        <% if employee.dog_id == @dog.id %>
+        <%= employee.to_s %> 
+        <% end %>
+    </div>
+<% end %> 
+</div>
