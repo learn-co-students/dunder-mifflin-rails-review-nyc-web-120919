@@ -9,12 +9,6 @@ Title: <%= @employee.title.capitalize %><br>
 Office: <%= @employee.office.capitalize %><br>
 
 <div>
-<% @dogs.each do |dog| %>
-    <div>
-        <% if dog.id == @employee.dog_id %>
-        Dog:
-        <%= dog.name %> 
-        <% end %>
-    </div>
-<% end %> 
+ <%= @employee.dog_names %>
+  
 </div>
